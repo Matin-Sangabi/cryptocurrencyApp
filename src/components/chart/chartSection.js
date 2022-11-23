@@ -1,5 +1,8 @@
 import { Buttons } from "../../utils/buttons";
+import { useState } from "react";
+import Chart from "./chart";
 const ChartSection = () => {
+  const [timeChart, setTimeChart] = useState("1y");
   return (
     <div className="bg-blue-50 p-2 w-full rounded-xl shadow-md shadow-blue-200 flex flex-col h-[450px]">
       <div className="w-full flex justify-between items-center p-4">
@@ -19,7 +22,9 @@ const ChartSection = () => {
               <button
                 key={i}
                 type="button"
+                value={timeChart}
                 className="border-none outline-none p-2 text-xl font-semibold focus:text-blue-500"
+                onClick={() => setTimeChart(btn.value)}
               >
                 {btn.name}
               </button>
@@ -27,46 +32,9 @@ const ChartSection = () => {
           })}
         </div>
       </div>
+      <Chart timeChart={timeChart}/>
     </div>
   );
 };
 
 export default ChartSection;
-/**
- * <button
-            type="button"
-            className="border-none outline-none p-2 text-lg font-semibold"
-          >
-            3h
-          </button>
-          <button
-            type="button"
-            className="border-none outline-none p-2 text-lg font-semibold"
-          >
-            1d
-          </button>
-          <button
-            type="button"
-            className="border-none outline-none p-2 text-lg font-semibold"
-          >
-            1w
-          </button>
-          <button
-            type="button"
-            className="border-none outline-none p-2 text-lg font-semibold"
-          >
-            3m
-          </button>
-          <button
-            type="button"
-            className="border-none outline-none p-2 text-lg font-semibold"
-          >
-            1y
-          </button>
-          <button
-            type="button"
-            className="border-none outline-none p-2 text-lg font-semibold"
-          >
-            3h
-          </button>
- */
