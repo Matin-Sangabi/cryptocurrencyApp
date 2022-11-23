@@ -1,11 +1,12 @@
-import SideBar from "./components/Menu/sideBar";
+
 import {Route , Routes} from 'react-router-dom';
-import Header from "./components/Menu/header";
+import DashboardPage from "./pages/dashboard";
 const App = () => {
   return ( 
     <div className="w-full h-screen bg-blue-100">
-    <Header/>
-      <SideBar/>
+      <Routes>
+        <Route element ={<DashboardPage/>} path="dashboard"/>
+      </Routes>
     </div>
    );
 }

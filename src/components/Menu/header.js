@@ -7,7 +7,7 @@ const Header = () => {
   const pathStr = pathname.split("/")[1];
   const PathName = pathStr.charAt(0).toUpperCase() + pathStr.slice(1);
   return (
-    <header className="w-full py-6 px-6 fixed top-0 left-0 border-b-2 border-fuchsia-500">
+    <header className="w-full py-6 px-6 fixed top-0 left-0">
       <nav className="w-full flex items-center justify-between">
         <div className="flex-1 flex items-center">
           <div className="flex items-center gap-x-2 w-80">
