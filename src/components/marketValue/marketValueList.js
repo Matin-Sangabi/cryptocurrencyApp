@@ -3,7 +3,7 @@ import { getAllCoins } from "../../services/getAllPrice";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-const MarketValueSection = () => {
+const MarketValueSection = ({ onSelectCoin }) => {
   const [allCoins, setAllCoins] = useState(null);
   function fetchToGetAllCoins() {
     getAllCoins()
@@ -35,7 +35,10 @@ const MarketValueSection = () => {
         {allCoins ? (
           allCoins.map((item) => {
             return (
-              <div className="w-full grid grid-cols-12 items-center py-3 px-4  text-slate-500 mb-2 border-b-2 ">
+              <div
+                key={item.rank}
+                className="w-full grid grid-cols-12 items-center py-3 px-4  text-slate-500 mb-2 border-b-2 "
+              >
                 <div className="col-span-4 flex items-center gap-x-2">
                   <div className="w-10">
                     <img src={item.iconUrl} alt={item.name} />
@@ -68,12 +71,13 @@ const MarketValueSection = () => {
                   </h1>
                 </div>
                 <span className="col-span-2 text-center  text-gray-800 font-semibold">
-                 $ {numberWithCommas(Math.round(item.listedAt * 100) / 100)}
+                  $ {numberWithCommas(Math.round(item.listedAt * 100) / 100)}
                 </span>
                 <span className="col-span-2 text-center flex items-center justify-end ">
                   <button
                     type="button"
                     className="py-2 px-6 text-center text-slate-100 bg-blue-800 rounded-xl hover:ring hover:ring-offset-2 hover:ring-blue-800 transition-all ease-in-out duration-500"
+                    onClick={() => onSelectCoin(item.uuid)}
                   >
                     Trade
                   </button>

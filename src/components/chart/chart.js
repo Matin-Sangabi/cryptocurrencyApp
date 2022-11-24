@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { GetCoinHistory } from "../../services/getCoinHistory";
 
-const Chart = ({ timeChart }) => {
+const Chart = ({ coinId, timeChart }) => {
   const [data, setData] = useState([]);
   const [sortData, setSortData] = useState([]);
 
-  const fetchHistoryCoin = (time = "1y") => {
-    GetCoinHistory("Qwsogvtv82FCd", time)
+  const fetchHistoryCoin = (coinId, time = "1y") => {
+    GetCoinHistory(coinId, time)
       .then((res) => {
         const history = res.data.data.history;
         setData([...history]);
@@ -21,8 +15,13 @@ const Chart = ({ timeChart }) => {
       .catch((err) => console.log(err.message));
   };
   useEffect(() => {
-    fetchHistoryCoin(timeChart);
-  }, [timeChart]);
+    fetchHistoryCoin(coinId, timeChart);
+    const handle = setInterval(
+      () => fetchHistoryCoin(coinId, timeChart),
+      30000
+    );
+    return () => clearInterval(handle);
+  }, [coinId, timeChart]);
   useEffect(() => {
     //*unmuted the state
     const sort = [...data];

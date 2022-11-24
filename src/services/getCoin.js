@@ -1,5 +1,6 @@
 import axios from "axios";
 export function GetOneCoin(id) {
+  // console.log(id);
   const options = {
     method: "GET",
     url: `https://coinranking1.p.rapidapi.com/coin/${id}`,
