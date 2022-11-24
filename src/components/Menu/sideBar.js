@@ -5,7 +5,7 @@ import Links, { LinkAction } from "../../utils/menu";
 const SideBar = () => {
   return (
     <section className="fixed left-0 top-0 p-2 w-64 h-full border-l-2 border-gray-600">
-      <div className="pt-24 pb-14  px-6 w-full h-full flex flex-col items-start">
+      <div className="pt-20   px-6 w-full h-full flex flex-col items-start">
         <ul className="flex flex-col gap-y-4">
           {Links.map((link, i) => {
             return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IoCaretUpOutline } from "react-icons/io5";
 import { GetOneCoin } from "../../services/getCoin";
-
+import { numberWithCommas } from "../../utils/numberWithCommas";
 const MyCoins = () => {
   const [BtcCoin, setBtcCoin] = useState(null);
   const [EthCoin, setEthCoin] = useState(null);
@@ -23,9 +23,7 @@ const MyCoins = () => {
       BtcFetchData();
     }, 30000);
   }, []);
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+ 
 
   if (BtcCoin && EthCoin) {
     return (
@@ -43,7 +41,7 @@ const MyCoins = () => {
               <span className={`flex text-sm items-center text-blue-500 gap-2 `}>
                 <span
                   className={`${
-                    EthCoin.price > 0 ? "text-green-500" : "text-red-600"
+                    Number(EthCoin.change) > 0 ? "text-green-500" : "text-red-600 rotate-180"
                   }`}
                 >
                   <IoCaretUpOutline />
@@ -66,7 +64,7 @@ const MyCoins = () => {
               <span className={`flex text-sm items-center text-blue-500 gap-2 `}>
                 <span
                   className={`${
-                    BtcCoin.price > 0 ? "text-green-500" : "text-red-600"
+                    BtcCoin.change > 0 ? "text-green-500" : "text-red-600 rotate-180"
                   }`}
                 >
                   <IoCaretUpOutline />
