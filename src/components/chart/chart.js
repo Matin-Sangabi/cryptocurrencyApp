@@ -10,9 +10,9 @@ import {
 } from "recharts";
 import { GetCoinHistory } from "../../services/getCoinHistory";
 
-const Chart = ({timeChart}) => {
+const Chart = ({ timeChart }) => {
   const [data, setData] = useState([]);
-  const [sortData , setSortData] = useState([]);
+  const [sortData, setSortData] = useState([]);
 
   const fetchHistoryCoin = (time = "1y") => {
     GetCoinHistory("Qwsogvtv82FCd", time)
@@ -26,29 +26,38 @@ const Chart = ({timeChart}) => {
     fetchHistoryCoin(timeChart);
   }, [timeChart]);
   useEffect(() => {
-    const sort = data.sort((a, b) => {
-      return new Date(a.timestamp) > new Date(b.timestamp) ? 1 : -1;
+    //*unmuted the state
+    const sort = [...data];
+    sort.reverse();
+    const sorted = sort.map((item) => {
+      return {
+        ...item,
+        timestamp: new Date(item.timestamp).toLocaleDateString(),
+        price: Math.round(item.price * 1000) / 1000,
+      };
     });
-    setSortData(sort);
+    setSortData(sorted);
   }, [data]);
   return (
-    <ResponsiveContainer width="100%" height={timeChart === '5y' ? '65%' : '100%'}>
+    <ResponsiveContainer
+      width="100%"
+      height={timeChart === "5y" ? "100%" : "100%"}
+    >
       <AreaChart
         width={300}
         height={200}
         data={sortData}
         margin={{
-          top: timeChart === '5y' ? 230 :timeChart === '1y' ?0 : 50,
+          top: timeChart === "5y" ? 0 : timeChart === "1y" ? 0 : 50,
         }}
       >
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <XAxis dataKey="timestamp" />
         {/* <YAxis /> */}
-        <Tooltip />
+        <Tooltip separator=": $" cursor={{ stroke: "none", strokeWidth: 2 }} />
         <Area
           type="monotoneX"
           dataKey="price"
-          aria-label="$"
           strokeWidth="3"
           stroke="#1e40af"
           fill="#bfdbfe"

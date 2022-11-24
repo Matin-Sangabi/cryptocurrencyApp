@@ -1,6 +1,5 @@
 import axios from "axios";
 export function GetCoinHistory(id , time) {
-    console.log(time);
   const options = {
     method: "GET",
     url: `https://coinranking1.p.rapidapi.com/coin/${id}/history`,
