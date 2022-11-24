@@ -29,49 +29,49 @@ const MyCoins = () => {
 
   if (BtcCoin && EthCoin) {
     return (
-      <div className="flex items-center gap-4">
-        <div className="bg-blue-50 shadow-md shadow-blue-200 rounded-xl p-4 flex  gap-2  flex-1">
-          <div className="w-20 h-16  rounded-md">
+      <div className="flex items-center gap-6">
+        <div className="bg-blue-50 shadow-md shadow-blue-200 rounded-xl p-2 flex  gap-2  flex-1">
+          <div className="w-16 h-14  rounded-md">
             <img src={EthCoin.iconUrl} alt={EthCoin.name} />
           </div>
           <div className="flex flex-col justify-between h-auto w-full">
-            <span className="text-slate-600">{EthCoin.symbol}</span>
+            <span className="text-slate-400 ">{EthCoin.symbol}</span>
             <div className="flex items-center justify-between w-full">
-              <h1 className="text-slate-900 font-bold text-xl">
-                ${numberWithCommas(Math.round(EthCoin.price * 1000) / 1000)}
+              <h1 className="text-gray-800 font-bold text-xl">
+                ${numberWithCommas(Math.round(EthCoin.price * 100) / 100)}
               </h1>
-              <span
-                className={`flex text-lg items-center gap-2 ${
-                  EthCoin.price > 0 ? "text-green-800" : "text-red-600"
-                }`}
-              >
-                <span>
+              <span className={`flex text-sm items-center text-blue-500 gap-2 `}>
+                <span
+                  className={`${
+                    EthCoin.price > 0 ? "text-green-500" : "text-red-600"
+                  }`}
+                >
                   <IoCaretUpOutline />
                 </span>
-                <span> {EthCoin.change} %</span>
+                <span>( {EthCoin.change} % )</span>
               </span>
             </div>
           </div>
         </div>
-        <div className="bg-blue-50 shadow-md shadow-blue-200 rounded-xl p-4 flex  gap-2  flex-1">
-          <div className="w-20 h-16  rounded-md">
+        <div className="bg-blue-50 shadow-md shadow-blue-200 rounded-xl p-2 flex  gap-2  flex-1">
+          <div className="w-16 h-14  rounded-md">
             <img src={BtcCoin.iconUrl} alt={BtcCoin.name} />
           </div>
           <div className="flex flex-col justify-between h-auto w-full">
-            <span className="text-slate-600">{BtcCoin.symbol}</span>
+            <span className="text-slate-400">{BtcCoin.symbol}</span>
             <div className="flex items-center justify-between w-full">
-              <h1 className="text-slate-900 font-bold text-xl">
-                ${numberWithCommas(Math.round(BtcCoin.price * 1000) / 1000)}
+              <h1 className="text-gray-800 font-bold text-xl">
+                ${numberWithCommas(Math.round(BtcCoin.price * 100) / 100)}
               </h1>
-              <span
-                className={`flex text-lg items-center gap-2 ${
-                  BtcCoin.price > 0 ? "text-green-800" : "text-red-600"
-                }`}
-              >
-                <span>
+              <span className={`flex text-sm items-center text-blue-500 gap-2 `}>
+                <span
+                  className={`${
+                    BtcCoin.price > 0 ? "text-green-500" : "text-red-600"
+                  }`}
+                >
                   <IoCaretUpOutline />
                 </span>
-                <span> {BtcCoin.change} %</span>
+                <span>( {BtcCoin.change} % )</span>
               </span>
             </div>
           </div>

@@ -41,14 +41,14 @@ const Chart = ({ timeChart }) => {
   return (
     <ResponsiveContainer
       width="100%"
-      height={timeChart === "5y" ? "100%" : "100%"}
+      height={timeChart === "5y" ? "100%" : "80%"}
     >
       <AreaChart
         width={300}
-        height={200}
+        height={300}
         data={sortData}
         margin={{
-          top: timeChart === "5y" ? 0 : timeChart === "1y" ? 0 : 50,
+          top: timeChart === "5y" ? 0 : timeChart === "1y" ? 0 : 0,
         }}
       >
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
@@ -60,7 +60,7 @@ const Chart = ({ timeChart }) => {
           dataKey="price"
           strokeWidth="3"
           stroke="#1e40af"
-          fill="#bfdbfe"
+          fill="#d5ecfb"
         />
       </AreaChart>
     </ResponsiveContainer>
