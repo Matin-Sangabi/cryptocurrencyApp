@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function getAllCoins() {
+export function getAllCoins(limit = 100) {
   const options = {
     method: "GET",
     url: "https://coinranking1.p.rapidapi.com/coins",
@@ -10,7 +10,7 @@ export function getAllCoins() {
       "tiers[0]": "1",
       orderBy: "marketCap",
       orderDirection: "desc",
-      limit: "100",
+      limit: limit,
       offset: "0",
     },
     headers: {

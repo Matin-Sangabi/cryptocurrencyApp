@@ -13,7 +13,7 @@ const ChartSection = ({ coinSelectTrade }) => {
   }
   useEffect(() => {
     fetchPriceCoin(coinSelectTrade);
-    const handle = setInterval(() => fetchPriceCoin(coinSelectTrade), 30000);
+    const handle = setInterval(() => fetchPriceCoin(coinSelectTrade), 10000);
     return () => clearInterval(handle);
   }, [coinSelectTrade]);
 

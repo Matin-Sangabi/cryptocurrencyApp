@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import { IoEllipsisVertical } from "react-icons/io5";
-import { getCoinPrice } from "../../services/getCoinPrice";
-
 import { globalStats } from "../../services/getGlobalStats";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 const OverViewSection = () => {
   const [globalStatsMarket, setGlobalStatsMarket] = useState(null);
-  const [getCoinPriceAction, setGetCoinPriceAction] = useState("");
+
   function fetchGlobalStats() {
     globalStats()
       .then((res) => setGlobalStatsMarket(res.data.data))
-      .catch((err) => console.log(err.message));
-  }
-  function getTransCoinPrice(uuid) {
-    getCoinPrice(uuid)
-      .then((res) => setGetCoinPriceAction(res.data.data.price))
       .catch((err) => console.log(err.message));
   }
   useEffect(() => {
@@ -53,7 +46,7 @@ const OverViewSection = () => {
               <h1 className="text-slate-800 text-lg font-semibold">
                 totalExchanges
               </h1>
-              <span className="py-2 w-32 font-semibold text-sm  bg-blue-500  shadow-lg  text-center rounded-lg text-white">
+              <span className="py-2 w-32 font-semibold text-sm  bg-indigo-500  shadow-lg  text-center rounded-lg text-white">
                 {globalStatsMarket.totalExchanges}
               </span>
             </div>
@@ -61,7 +54,7 @@ const OverViewSection = () => {
               <h1 className="text-slate-800 text-lg font-semibold">
                 totalMarketCap
               </h1>
-              <span className="py-2 w-32 font-semibold text-sm px-4 bg-blue-500  shadow-lg  text-center rounded-lg text-white">
+              <span className="py-2 w-32 font-semibold text-sm flex justify-end px-4 bg-blue-500  shadow-lg  rounded-lg text-white">
                 ${numberWithCommas(globalStatsMarket.totalMarketCap)}
               </span>
             </div>

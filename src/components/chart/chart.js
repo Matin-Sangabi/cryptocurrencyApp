@@ -18,7 +18,7 @@ const Chart = ({ coinId, timeChart }) => {
     fetchHistoryCoin(coinId, timeChart);
     const handle = setInterval(
       () => fetchHistoryCoin(coinId, timeChart),
-      30000
+      10000
     );
     return () => clearInterval(handle);
   }, [coinId, timeChart]);
