@@ -10,7 +10,7 @@ export function getAllCoins() {
       "tiers[0]": "1",
       orderBy: "marketCap",
       orderDirection: "desc",
-      limit: "50",
+      limit: "100",
       offset: "0",
     },
     headers: {

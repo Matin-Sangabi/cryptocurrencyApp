@@ -1,8 +1,8 @@
 import axios from "axios";
-export function getCoinPrice(uuid) {
+export function globalStats() {
   const options = {
     method: "GET",
-    url: `https://coinranking1.p.rapidapi.com/coin/${uuid}/price`,
+    url: "https://coinranking1.p.rapidapi.com/stats",
     params: { referenceCurrencyUuid: "yhjMzLPhuIDl" },
     headers: {
       "X-RapidAPI-Key": "d64d19c497msh80e221a4c8bfe48p19e92djsne10b78a9a4b9",

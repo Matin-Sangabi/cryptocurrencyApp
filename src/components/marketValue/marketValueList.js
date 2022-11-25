@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { getAllCoins } from "../../services/getAllPrice";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
@@ -12,7 +12,7 @@ const MarketValueSection = ({ onSelectCoin }) => {
   }
   useEffect(() => {
     fetchToGetAllCoins();
-    setInterval(() => fetchToGetAllCoins(), 30000);
+    setInterval(() => fetchToGetAllCoins(), 10000);
   }, []);
   return (
     <div className="w-full bg-blue-50 shadow-md shadow-blue-200  rounded-xl p-6 flex flex-col">
