@@ -38,7 +38,7 @@ const Chart = ({ coinId, timeChart }) => {
   return (
     <ResponsiveContainer
       width="100%"
-      height={timeChart === "5y" ? "100%" : "80%"}
+      height={timeChart === "5y" ? "100%" : "70%"}
     >
       <AreaChart
         width={300}

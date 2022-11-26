@@ -19,8 +19,8 @@ const ChartSection = ({ coinSelectTrade }) => {
 
   if (CoinPrice) {
     return (
-      <div className="bg-blue-50 p-2 w-full rounded-xl shadow-md shadow-blue-200 flex flex-col h-[300px]">
-        <div className="w-full flex justify-between items-center p-4">
+      <div className="bg-blue-50 p-2 w-full rounded-xl shadow-md shadow-blue-200 flex flex-col h-[350px] md:h-[400px] lg:h-[300px]">
+        <div className="w-full flex flex-col justify-start items-center lg:flex-row lg:justify-between  p-4">
           <div className="flex flex-col gap-y-2">
             <div className="flex items-center gap-x-2">
               <h1 className="text-slate-800 font-semibold">

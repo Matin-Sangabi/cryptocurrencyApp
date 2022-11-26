@@ -8,13 +8,13 @@ const DashboardPage = () => {
   const [coinIdSelect , setCoinIdSelect] = useState("Qwsogvtv82FCd");
   return (
     <Layout>
-      <section className="grid grid-cols-12 gap-8">
-        <div className="p-2 col-span-8 flex flex-col gap-6">
+      <section className="grid grid-cols-12 md:gap-4 xl:gap-4">
+        <div className="p-2 col-span-12 lg:col-span-9 xl:col-span-8 flex flex-col gap-4">
           <MyCoins />
           <ChartSection coinSelectTrade={coinIdSelect}/>
           <MarketValueSection onSelectCoin={setCoinIdSelect}/>
         </div>
-        <div className="p-2 col-span-4  bg-blue-50 shadow-md shadow-blue-200 rounded-2xl my-2">
+        <div className="p-2 col-span-12 lg:col-span-3 xl:col-span-4 bg-blue-50 shadow-md shadow-blue-200 rounded-2xl my-2">
           <OverViewSection/>
         </div>
       </section>
