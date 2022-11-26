@@ -14,7 +14,7 @@ const DashboardPage = () => {
           <ChartSection coinSelectTrade={coinIdSelect}/>
           <MarketValueSection onSelectCoin={setCoinIdSelect}/>
         </div>
-        <div className="p-2 col-span-12 lg:col-span-3 xl:col-span-4 bg-blue-50 shadow-md shadow-blue-200 rounded-2xl my-2">
+        <div className="p-2 mb-24 md:mb-0 col-span-12 lg:col-span-3 xl:col-span-4 bg-blue-50 shadow-md shadow-blue-200 rounded-2xl my-2">
           <OverViewSection/>
         </div>
       </section>

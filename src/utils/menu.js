@@ -1,5 +1,5 @@
 import { MdDashboard } from "react-icons/md";
-import { IoPieChartSharp ,IoNewspaper ,IoChatbubbles ,IoTrendingUp ,IoLogOutOutline , IoSettingsSharp } from "react-icons/io5";
+import { IoPieChartSharp ,IoNewspaper ,IoChatbubbles ,IoTrendingUp ,IoLogOutOutline , IoSettingsSharp ,IoPersonSharp } from "react-icons/io5";
 import { AiOutlineTransaction } from "react-icons/ai";
 
 const Links = [
@@ -8,7 +8,7 @@ const Links = [
   { name: "News", path: "/news", icon: () => IoNewspaper() },
   { name: "Chats", path: "/chats", icon: () => IoChatbubbles() },
   { name: "Transactions", path: "/transaction", icon: () => AiOutlineTransaction() },
-  { name: "Trends", path: "/trends", icon: () =>IoTrendingUp() },
+  { name: "Profile", path: "/account", icon: () =>IoPersonSharp() },
 ];
 
 export const LinkAction = [
