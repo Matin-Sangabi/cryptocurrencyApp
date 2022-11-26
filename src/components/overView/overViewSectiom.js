@@ -113,7 +113,7 @@ const OverViewSection = () => {
                     </div>
                     <div className="flex flex-col text-sm md:text-base lg:text-sm">
                       <span className="text-slate-800 font-semibold">
-                        Buy {item.name}
+                         {item.name}
                       </span>
                       <span className="text-slate-400 text-xs md:text-sm lg:text-xs">
                         Today{" "}
@@ -154,7 +154,7 @@ const OverViewSection = () => {
                     </div>
                     <div className="flex flex-col text-sm md:text-base lg:text-sm ">
                       <span className="text-slate-800 font-semibold">
-                        Buy {item.name}
+                         {item.name}
                       </span>
                       <span className="text-slate-400 text-xs md:text-sm lg:text-xs">
                         Today{" "}
