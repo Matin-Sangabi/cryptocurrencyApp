@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { globalStats } from "../../services/getGlobalStats";
 import { numberWithCommas } from "../../utils/numberWithCommas";
+import Loading from "../Loading/Loading";
 const OverViewSection = () => {
   const [globalStatsMarket, setGlobalStatsMarket] = useState(null);
 
@@ -87,7 +88,7 @@ const OverViewSection = () => {
             </div>
           </>
         ) : (
-          <div className="text-center">Loading ...</div>
+          <div className="justify-center flex"><Loading/></div>
         )}
       </div>
       <div className="pt-4 flex flex-col ">
@@ -129,7 +130,7 @@ const OverViewSection = () => {
               );
             })
           ) : (
-            <div className="text-center">Loading</div>
+            <div className="flex justify-center"><Loading/></div>
           )}
         </div>
         <h1 className="text-lg lg:text-base font-semibold text-slate-800 pt-6">
@@ -170,7 +171,7 @@ const OverViewSection = () => {
               );
             })
           ) : (
-            <div className="text-center">Loading</div>
+            <div className="flex justify-center"><Loading/></div>
           )}
         </div>
       </div>

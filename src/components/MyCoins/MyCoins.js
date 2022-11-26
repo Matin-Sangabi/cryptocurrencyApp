@@ -3,6 +3,7 @@ import { IoCaretUpOutline } from "react-icons/io5";
 import { getAllCoins } from "../../services/getAllPrice";
 
 import { numberWithCommas } from "../../utils/numberWithCommas";
+import Loading from "../Loading/Loading";
 const MyCoins = () => {
   const [coins, setCoins] = useState(null);
   function fetchTwiceCoin() {
@@ -50,7 +51,7 @@ const MyCoins = () => {
           );
         })
       ) : (
-        <div className="text-center">Loading...</div>
+        <div className="flex  justify-center"><Loading/></div>
       )}
     </div>
   );

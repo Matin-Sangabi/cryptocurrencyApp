@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Chart from "./chart";
 import { GetOneCoin } from "../../services/getCoin";
 import { numberWithCommas } from "../../utils/numberWithCommas";
+import { IoEllipseSharp } from "react-icons/io5";
+import Loading from "../Loading/Loading";
 const ChartSection = ({ coinSelectTrade }) => {
   const [timeChart, setTimeChart] = useState("1y");
   const [CoinPrice, setCoinPrice] = useState();
@@ -65,6 +67,8 @@ const ChartSection = ({ coinSelectTrade }) => {
         <Chart coinId={coinSelectTrade} timeChart={timeChart} />
       </div>
     );
+  }else{
+    return <div className="flex justify-center"><Loading/></div>
   }
 };
 

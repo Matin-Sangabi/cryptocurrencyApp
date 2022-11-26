@@ -1,5 +1,5 @@
 import { MdDashboard } from "react-icons/md";
-import { IoPieChartSharp ,IoNewspaper ,IoChatbubbles ,IoTrendingUp ,IoLogOutOutline , IoSettingsSharp ,IoPersonSharp } from "react-icons/io5";
+import { IoPieChartSharp ,IoNewspaper ,IoChatbubbles  ,IoLogOutOutline , IoSettingsSharp ,IoPersonSharp } from "react-icons/io5";
 import { AiOutlineTransaction } from "react-icons/ai";
 
 const Links = [

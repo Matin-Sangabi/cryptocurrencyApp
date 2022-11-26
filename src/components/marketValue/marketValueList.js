@@ -2,6 +2,7 @@ import {useEffect, useState } from "react";
 import { getAllCoins } from "../../services/getAllPrice";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import Loading from "../Loading/Loading";
 
 const MarketValueSection = ({ onSelectCoin }) => {
   const [allCoins, setAllCoins] = useState(null);
@@ -87,7 +88,7 @@ const MarketValueSection = ({ onSelectCoin }) => {
             );
           })
         ) : (
-          <div className="text-center">Loading ...</div>
+          <div className="flex justify-center"><Loading/></div>
         )}
       </div>
       </div>
