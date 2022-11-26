@@ -16,8 +16,9 @@ const OverViewSection = () => {
     const handle = setInterval(() => fetchGlobalStats(), 30000);
     return () => clearInterval(handle);
   }, []);
-  return (
-    <>
+  if(globalStatsMarket){
+    return (
+    <div className="p-2 mb-24 md:mb-0 col-span-12 lg:col-span-3 xl:col-span-4 bg-blue-50 shadow-md shadow-blue-200 rounded-2xl my-2">
       <div className="w-full flex items-center justify-between  p-2 xl:p-4">
         <h1 className="text-lg lg:text-base font-semibold text-slate-800">
           Overview
@@ -175,8 +176,10 @@ const OverViewSection = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
+  }
+  
 };
 
 export default OverViewSection;
